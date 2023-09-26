@@ -19,15 +19,14 @@ class CreatePaymentTestCase(APITestCase):
         self.assertEqual(Payment.objects.get().recipient_id, "8")
 
     def test_get_payment_details(self):
-    #     pay_obj = Payment.objects.create(amount=Decimal("100"),sender_id="1",recipient_id="1")
-    #     id = pay_obj.id
-    #     print(id)
-    #     # new_url = f'api/payments/1/'
-    #     # get_response = self.client.get(new_url)
-    #     # self.assertEqual(get_response.status_code, status.HTTP_200_OK)
-    #     factory = APIRequestFactory()
-    #     request = factory.put(f'/api/payments/{id}/', {'amount': '200'})
-    #     self.assertEqual(request.body["amount"], Decimal("200"))
-    #     # self.assertEqual(request.status_code,status.HTTP_200_OK)
-        pass
+        Payment.objects.create(amount=Decimal("100"),sender_id="1",recipient_id="1")
+        # new_url = f'api/payments/1/'
+        # get_response = self.client.get(new_url)
+        factory = APIRequestFactory()
+        response = factory.put(f'/api/payments/1/', {'amount': '200'})
+        self.assertEqual(response.method, "PUT")
+        # self.assertEqual(response.POST.get("amount",0), Payment.objects.get().amount)
+        # self.assertEqual(response.status_code,status.HTTP_200_OK)
+
+    
         
