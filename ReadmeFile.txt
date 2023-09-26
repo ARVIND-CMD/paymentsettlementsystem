@@ -1,6 +1,6 @@
 Django Setup:
 1. Clone the project from the git repository.
-git clone ""
+git clone "https://github.com/ARVIND-CMD/paymentsettlementsystem.git"
 2. Run the command in the terminal(make sure requirements.txt lies in the same directory) : pip install -r requirements.txt
 
 

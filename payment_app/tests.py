@@ -5,7 +5,8 @@ from payment_app.models import Payment
 from settlement_app.models import Settlement
 from decimal import Decimal
 from rest_framework.test import APIRequestFactory
-
+from unittest.mock import patch
+import unittest
 class CreatePaymentTestCase(APITestCase):
 
     def test_create_payment(self):
@@ -27,6 +28,11 @@ class CreatePaymentTestCase(APITestCase):
         self.assertEqual(response.method, "PUT")
         # self.assertEqual(response.POST.get("amount",0), Payment.objects.get().amount)
         # self.assertEqual(response.status_code,status.HTTP_200_OK)
+
+class GetPaymentTestCase(unittest.TestCase):
+    @patch()
+    def test_get_payment_details(self):
+
 
     
         
