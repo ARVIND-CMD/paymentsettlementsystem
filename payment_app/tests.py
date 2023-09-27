@@ -30,8 +30,9 @@ class CreatePaymentTestCase(APITestCase):
         # self.assertEqual(response.status_code,status.HTTP_200_OK)
 
 class GetPaymentTestCase(unittest.TestCase):
-    @patch()
+    # @patch(payment)
     def test_get_payment_details(self):
+        pass
 
 
     
