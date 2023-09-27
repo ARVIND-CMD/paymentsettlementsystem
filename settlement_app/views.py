@@ -36,6 +36,7 @@ def create_settlements(request):
                     pay_id = int(pay_id)
                     payment_obj = Payment.objects.get(id=pay_id)
                     payment_obj.status = "COMPLETED"
+                    payment_obj.save()
                     deimal_obj_amount = payment_obj.amount 
                     payment_obj.amount = float(deimal_obj_amount)
                     pay_data = model_to_dict(payment_obj)
